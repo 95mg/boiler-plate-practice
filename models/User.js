@@ -7,8 +7,8 @@ const userSchema = mongoose.Schema({
     },
     email: {
         type: String,
-        trim: true, //* trim === spacebar에 반응하여 활성화(true => spacebar를 제거)
-        unique: 1 //* unique === email 입력값에 반응하여 활성화(1) => 중복을 방지
+        trim: true, //trim === spacebar에 반응하여 활성화(true => spacebar를 제거)
+        unique: 1 //unique === email 입력값에 반응하여 활성화(1) => 중복을 방지
     },
     password: {
         type: String,
@@ -18,7 +18,7 @@ const userSchema = mongoose.Schema({
         type: String,
         maxlength: 50
     },
-    roll: {
+    roll: { // 관리자, 일반 유저 등의 구분을 위해 부여하는 roll
         type: Number,
         default: 0
     },
@@ -39,5 +39,5 @@ const User = mongoose.model('User', userSchema)
 // Mongoose는 자동으로 모델 이름의 복수형 소문자 버전을 찾습니다
 // (참조: https://mongoosejs.com/docs/models.html)
 
-module.exports = {User} 
+module.exports = { User }
 // 객체 형태로 내보내기 위해서 {User} 형태로 사용
